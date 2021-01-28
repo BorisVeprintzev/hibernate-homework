@@ -16,7 +16,7 @@ public class Resume {
     // https://vladmihalcea.com/from-jpa-to-hibernates-legacy-and-enhanced-identifier-generators/
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="resume_id_seq")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "resume_id_seq")
     @SequenceGenerator(name = "resume_gen", sequenceName = "resume_id_seq", allocationSize = 10)
     @Column(name = "id")
     private Integer id;

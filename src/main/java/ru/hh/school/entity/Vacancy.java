@@ -15,12 +15,12 @@ public class Vacancy {
     @Column(name = "vacancy_id")
     private Integer id;
 
-    @ManyToOne (fetch = FetchType.LAZY)
-    @JoinColumn (name="employer_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "employer_id")
     private Employer employer;
 
-    @ManyToOne (fetch = FetchType.LAZY)
-    @JoinColumn (name="area_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "area_id")
     private Area area;
 
     @Column(name = "title")
@@ -33,7 +33,7 @@ public class Vacancy {
     private Integer compensationFrom;
 
     @Column(name = "compensation_to")
-    private Integer  compensationTo;
+    private Integer compensationTo;
 
     @Column(name = "compensation_gross")
     private Boolean compensationGross;

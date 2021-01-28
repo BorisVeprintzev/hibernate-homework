@@ -8,26 +8,27 @@ import ru.hh.school.entity.Resume;
 import ru.hh.school.entity.Area;
 import ru.hh.school.entity.Employer;
 import ru.hh.school.entity.Vacancy;
+
 import java.util.List;
 
 public class DbFactory {
 
-  private static final List<Class<?>> ENTITY_CLASSES_REGISTRY = List.of(
-    Employer.class,
-    Vacancy.class,
-    Resume.class,
-    Area.class
-  );
+    private static final List<Class<?>> ENTITY_CLASSES_REGISTRY = List.of(
+            Employer.class,
+            Vacancy.class,
+            Resume.class,
+            Area.class
+    );
 
-  public static SessionFactory createSessionFactory() {
-    StandardServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
-      .loadProperties("hibernate.properties")
-      .build();
+    public static SessionFactory createSessionFactory() {
+        StandardServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
+                .loadProperties("hibernate.properties")
+                .build();
 
-    MetadataSources metadataSources = new MetadataSources(serviceRegistry);
-    ENTITY_CLASSES_REGISTRY.forEach(metadataSources::addAnnotatedClass);
+        MetadataSources metadataSources = new MetadataSources(serviceRegistry);
+        ENTITY_CLASSES_REGISTRY.forEach(metadataSources::addAnnotatedClass);
 
-    return metadataSources.buildMetadata().buildSessionFactory();
-  }
+        return metadataSources.buildMetadata().buildSessionFactory();
+    }
 
 }

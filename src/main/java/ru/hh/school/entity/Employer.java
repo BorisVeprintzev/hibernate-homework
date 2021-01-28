@@ -27,7 +27,7 @@ public class Employer {
     @Column(name = "creation_time")
     private LocalDateTime creationTime;
 
-    @OneToMany(mappedBy = "employer", fetch=FetchType.LAZY)
+    @OneToMany(mappedBy = "employer", fetch = FetchType.LAZY)
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     private List<Vacancy> vacancies = new ArrayList<>();
 
